@@ -4,24 +4,56 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/parkersyn5/viper-main/main/Library/Main.lua'))()
 local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/parkersyn5/viper-main/main/Library/addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/parkersyn5/viper-main/main/Library/addons/SaveManager.lua'))()
+local ESP = loadstring(game:HttpGet('https://raw.githubusercontent.com/parkersyn5/viper-main/main/Library/addons/ESP.lua'))()
 
 local Window = Library:CreateWindow({
-    -- Set Center to true if you want the menu to appear in the center
-    -- Set AutoShow to true if you want the menu to appear when it is created
-    -- Position and Size are also valid options here
-    -- but you do not need to define them unless you are changing them :)
-
-    Title = 'Example menu',
+    Title = 'VIPER | MAIN CLIENT',
     Center = true, 
     AutoShow = true,
 })
 
+
+
+
 -- You do not have to set your tabs & groups up this way, just a prefrence.
 local Tabs = {
     -- Creates a new tab titled Main
-    Main = Window:AddTab('Main'), 
+    Main = Window:AddTab('Main'),
+    ESPS = Window:AddTab('Esp'),
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
+
+
+
+
+
+local LeftEspBox = Tabs.ESPS:AddLeftGroupbox("Player")
+
+LeftEspBox:AddToggle('ESPEnabled', { Text = 'Enabled' }):OnChanged(function()
+	ESP:Toggle(Toggles.ESPEnabled.Value)
+end)
+
+local leftespbox2 = Tabs.ESPS:AddLeftGroupbox("Player Visuals")
+
+leftespbox2:AddToggle('ESPShowTeams', { Text = 'Show teammates' }):OnChanged(function()
+    ESP.TeamMates = Toggles.ESPShowTeams.Value
+end)
+
+leftespbox2:AddToggle('ESPShowNames', { Text = 'Show names' }):OnChanged(function()
+	ESP.Names = Toggles.ESPShowNames.Value
+end)
+
+leftespbox2:AddToggle('ESPShowTracers', { Text = 'Show tracers' }):OnChanged(function()
+    ESP.Tracers = Toggles.ESPShowTracers.Value
+end)
+
+leftespbox2:AddToggle('ESPShowBoxes', { Text = 'Show boxes' }):OnChanged(function()
+	ESP.Boxes = Toggles.ESPShowBoxes.Value
+end)
+
+leftespbox2:AddLabel('Team Colors'):AddColorPicker('allyColor', { Default = Color3.fromRGB(0, 255, 140) }):AddColorPicker('enemyColor', { Default = Color3.fromRGB(255, 25, 25) })
+
+
 
 -- Groupbox and Tabbox inherit the same functions
 -- except Tabboxes you have to call the functions on a tab (Tabbox:AddTab(name))
@@ -256,7 +288,7 @@ Options.KeyPicker:SetValue({ 'MB2', 'Toggle' }) -- Sets keybind to MB2, mode to 
 Library:SetWatermarkVisibility(true)
 
 -- Sets the watermark text
-Library:SetWatermark('This is a really long watermark to text the resizing')
+Library:SetWatermark('Loaded : ' .. os.date("%X") .. " | " .. tostring(game.Players.LocalPlayer.Name .. '| Uid : ' .. tostring(math.random(1,999))))
 
 Library.KeybindFrame.Visible = true; -- todo: add a function for this
 
