@@ -8,7 +8,7 @@ local ChamsVisuals = {
   ChamsOutlineTransparency = 0
 }
 
-function ChamsVisuals:EnableChams()
+function ChamsVisuals:EnableChams(boolval)
         spawn(function()
         local Players = game:GetService("Players")
         local RunService = game:GetService("RunService")
@@ -23,7 +23,7 @@ function ChamsVisuals:EnableChams()
                 CreateHighlight(v)
                 if (v.Character:FindFirstChild("HighlightCham")) then
                     local Highlight = v.Character.HighlightCham
-                    Highlight.Enabled = ChamsVisuals.ChamsEnabled
+                    Highlight.Enabled = boolval
                     Highlight.DepthMode = ChamsVisuals.ChamsDepthMode
                     Highlight.FillColor = ChamsVisuals.ChamsFillColor
                     Highlight.OutlineColor = ChamsVisuals.ChamsOutlineColor
