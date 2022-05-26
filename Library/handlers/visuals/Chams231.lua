@@ -1,15 +1,14 @@
-local ChamsVisuals = {
-  ChamsTeamColors = false,
-  ChamsEnabled = true,
-  ChamsDepthMode = Enum.HighlightDepthMode.Occluded,
-  ChamsFillColor = Color3.fromRGB(10, 10, 10),
-  ChamsOutlineColor = Color3.fromRGB(85, 105, 230),
-  ChamsFillTransparency = 0,
-  ChamsOutlineTransparency = 0
-}
+local ChamsVisuals = {}
+
+getgenv().ChamsTeamColors = false
+getgenv().ChamsEnabled = true
+getgenv().ChamsDepthMode = Enum.HighlightDepthMode.Occluded
+getgenv().ChamsFillColor = Color3.fromRGB(10, 10, 10)
+getgenv().ChamsOutlineColor = Color3.fromRGB(85, 105, 230)
+getgenv().ChamsFillTransparency = 0
+getgenv().ChamsOutlineTransparency = 0
 
 function ChamsVisuals:ToggleChams(boolval)
-        spawn(function()
         local Players = game:GetService("Players")
         local RunService = game:GetService("RunService")
         local function CreateHighlight(Player)
@@ -23,19 +22,18 @@ function ChamsVisuals:ToggleChams(boolval)
                 CreateHighlight(v)
                 if (v.Character:FindFirstChild("HighlightCham")) then
                     local Highlight = v.Character.HighlightCham
-                    Highlight.Enabled = boolval
-                    Highlight.DepthMode = ChamsVisuals.ChamsDepthMode
-                    Highlight.FillColor = ChamsVisuals.ChamsFillColor
-                    Highlight.OutlineColor = ChamsVisuals.ChamsOutlineColor
-                    Highlight.FillTransparency = ChamsVisuals.ChamsFillTransparency
-                    Highlight.OutlineTransparency = ChamsVisuals.ChamsOutlineTransparency
+                    Highlight.Enabled = getgenv().ChamsEnabled
+                    Highlight.DepthMode = getgenv().ChamsDepthMode
+                    Highlight.FillColor = getgenv().ChamsFillColor
+                    Highlight.OutlineColor = getgenv().ChamsOutlineColor
+                    Highlight.FillTransparency = getgenv().ChamsFillTransparency
+                    Highlight.OutlineTransparency = getgenv().ChamsOutlineTransparency
                     if getgenv().ChamsTeamColors == true then
                         Highlight.FillColor = v.TeamColor.Color
                     end
                 end
             end
         end)
-    end)
 end
 
 return ChamsVisuals
