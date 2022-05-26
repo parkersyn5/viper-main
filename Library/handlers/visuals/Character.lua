@@ -1,5 +1,7 @@
 local CharacterVisuals = {}
 
+_G.traillifetime = 3
+
 function CharacterVisuals:MovementTrail()
         spawn(function()
             local root = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
@@ -13,7 +15,7 @@ function CharacterVisuals:MovementTrail()
             breadcrumbattachment2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
                 for k, v in pairs(
                     {
-                        Lifetime = 3,
+                        Lifetime = tonumber(_G.traillifetime),
                         Color = ColorSequence.new(Color3.new(1, 0, 0), Color3.new(0, 0, 1)),
                         MinLength = 0,
                         FaceCamera = true,
