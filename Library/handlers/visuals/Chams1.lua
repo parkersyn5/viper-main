@@ -23,12 +23,12 @@ function ChamsVisuals:EnableChams()
                 CreateHighlight(v)
                 if (v.Character:FindFirstChild("HighlightCham")) then
                     local Highlight = v.Character.HighlightCham
-                    Highlight.Enabled = getgenv().ChamsEnabled
-                    Highlight.DepthMode = getgenv().ChamsDepthMode
-                    Highlight.FillColor = getgenv().ChamsFillColor
-                    Highlight.OutlineColor = getgenv().ChamsOutlineColor
-                    Highlight.FillTransparency = getgenv().ChamsFillTransparency
-                    Highlight.OutlineTransparency = getgenv().ChamsOutlineTransparency
+                    Highlight.Enabled = ChamsVisuals.ChamsEnabled
+                    Highlight.DepthMode = ChamsVisuals.ChamsDepthMode
+                    Highlight.FillColor = ChamsVisuals.ChamsFillColor
+                    Highlight.OutlineColor = ChamsVisuals.ChamsOutlineColor
+                    Highlight.FillTransparency = ChamsVisuals.ChamsFillTransparency
+                    Highlight.OutlineTransparency = ChamsVisuals.ChamsOutlineTransparency
                     if getgenv().ChamsTeamColors == true then
                         Highlight.FillColor = v.TeamColor.Color
                     end
