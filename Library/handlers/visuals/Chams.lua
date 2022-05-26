@@ -1,11 +1,11 @@
 local ChamsVisuals = {
-  getgenv().ChamsTeamColors = false,
-  getgenv().ChamsEnabled = true,
-  getgenv().ChamsDepthMode = Enum.HighlightDepthMode.Occluded,
-  getgenv().ChamsFillColor = Color3.fromRGB(10, 10, 10),
-  getgenv().ChamsOutlineColor = Color3.fromRGB(85, 105, 230),
-  getgenv().ChamsFillTransparency = 0,
-  getgenv().ChamsOutlineTransparency = 0
+  ChamsTeamColors = false,
+  ChamsEnabled = true,
+  ChamsDepthMode = Enum.HighlightDepthMode.Occluded,
+  ChamsFillColor = Color3.fromRGB(10, 10, 10),
+  ChamsOutlineColor = Color3.fromRGB(85, 105, 230),
+  ChamsFillTransparency = 0,
+  ChamsOutlineTransparency = 0
 }
 
 function ChamsVisuals:EnableChams()
