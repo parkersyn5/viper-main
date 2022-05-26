@@ -20,9 +20,9 @@ function AttachChams(parent, face)
 end
 
 getgenv().viperespsettings = {
-    Box = true,
-    Name = true,
-    Tracers = true,
+    Box = false,
+    Name = false,
+    Tracers = false,
     Chams = false,
     Font = 3,
     Teammates = false,
