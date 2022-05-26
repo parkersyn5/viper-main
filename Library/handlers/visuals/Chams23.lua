@@ -8,7 +8,7 @@ local ChamsVisuals = {
   ChamsOutlineTransparency = 0
 }
 
-function ChamsVisuals:EnableChams(boolval)
+function ChamsVisuals:ToggleChams(boolval)
         spawn(function()
         local Players = game:GetService("Players")
         local RunService = game:GetService("RunService")
