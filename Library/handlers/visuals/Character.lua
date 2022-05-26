@@ -1,6 +1,6 @@
-local Visuals = {}
+local CharacterVisuals = {}
 
-function Visuals:MovementTrail()
+function CharacterVisuals:MovementTrail()
         spawn(function()
             local root = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
             local trail = Instance.new("Trail")
@@ -28,7 +28,7 @@ function Visuals:MovementTrail()
     end)
 end
 
-function Visuals:DisableMovementTrail()
+function CharacterVisuals:DisableMovementTrail()
     local root = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
     local trail = Instance.new("Trail")
     local cam = workspace.CurrentCamera
@@ -45,4 +45,4 @@ function Visuals:DisableMovementTrail()
     end
 end
 
-return Visuals
+return CharacterVisuals
