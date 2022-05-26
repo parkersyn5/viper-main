@@ -5,7 +5,7 @@ getgenv().ChamsDepthMode = Enum.HighlightDepthMode.Occluded, -- Enum.HighlightDe
 getgenv().ChamsFillColor = Color3.fromRGB(10, 10, 10),
 getgenv().ChamsOutlineColor = Color3.fromRGB(85, 105, 230),
 getgenv().ChamsFillTransparency = 0,
-getgenv().ChamsOutlineTransparency = 0,
+getgenv().ChamsOutlineTransparency = 0
 }
 
 local Players = game:GetService("Players")
