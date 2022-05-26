@@ -44,3 +44,5 @@ function Visuals:DisableMovementTrail()
         end
     end
 end
+
+return Visuals
