@@ -1,4 +1,3 @@
-
 local ChamsVisuals = {}
 
 getgenv().ChamsTeamColors = false
